@@ -6,7 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     //Rigidbody is component for charater movement.We reference that.
     //Slide Rigidbody into the script we made in Unity.
+    //Public because Unity can't see "private".
     public Rigidbody2D rigidBody;
+
+    //GetAxisRaw is taking float value
+    //This will be shown in Unity to set
+    public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +22,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //GetAxisRaw is better then GetAxis
+        //Here we get inputs from player,Unity has it that its (wasd) or arrow keys.
+
+        /*  Vector2(Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical")) is multyplayed by moveSpeed because
+            character is moving slowly
+        */
+        rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical")) * moveSpeed;
     }
 } 
-
-/*Rigidbody is component for character movement.We use reference for that.*/

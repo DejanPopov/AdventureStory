@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     //This will be shown in Unity to set
     public float moveSpeed;
 
+    //Reference to animator,put Animator in script in Unity
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -16,9 +16,28 @@ public class PlayerController : MonoBehaviour
     //Reference to animator,put Animator in script in Unity.
     public Animator animator;
 
+    //Static means there can only be one version of this for rvry single object.
+    public static PlayerController instance;
+
     // Start is called before the first frame update.
     void Start()
     {
+        //Playing game for first time,setting instance.
+        //When player goes from scene 1 to 2 and back to 1, there is 2 players.
+        //This IF/ELSE is to stop that.
+        if (instance = null)
+        {
+            //instance = this script!
+            instance = this;
+        }
+        else
+        {
+            //Destroy other player spawn
+            Destroy(gameObject);
+        }
+        
+
+
         //When we load a new scene, don't destroy whatever is brackets.
         //When player exits scene and goes into other scene he doesn't exit.
         //gameObject in this case is the player,because this script is attached on him..
@@ -32,7 +51,7 @@ public class PlayerController : MonoBehaviour
         //Here we get inputs from player,Unity has it that its (wasd) or arrow keys.
 
         /*  Vector2(Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")) is multyplayed by moveSpeed because
+            Input.GetAxisRaw("Vertical")) is multiplayed by moveSpeed because
             character is moving slowly
         */
         rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"),

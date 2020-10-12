@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
-        
+        //When we load a new scene, don't destroy whatever is brackets.
+        //When player exits scene and goes into other scene he doesn't exit.
+        //gameObject in this case is the player,because this script is attached on him..
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

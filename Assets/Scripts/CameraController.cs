@@ -15,7 +15,9 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //LateUpdate() is so the camera wont be lagging when moving player.
+    //It is called after Update().
+    void LateUpdate()
     {
         //Set X,Y,Z values
         //Z value is camera. If we would make transform.position.z

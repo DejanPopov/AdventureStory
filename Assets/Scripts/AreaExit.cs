@@ -11,10 +11,13 @@ public class AreaExit : MonoBehaviour
 
     public string areaTranstitionName;
 
+    //AreaEntrance script instance
+    public AreaEntrance theEntrance;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        theEntrance.transtionName = areaTranstitionName;
     }
 
     // Update is called once per frame

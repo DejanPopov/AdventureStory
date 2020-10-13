@@ -261,6 +261,7 @@ MonoBehaviour:
   rigidBody: {fileID: 160615679}
   moveSpeed: 5
   animator: {fileID: 160615682}
+  areaTransitionName: 
 --- !u!95 &160615682
 Animator:
   serializedVersion: 3
@@ -556,6 +557,10 @@ PrefabInstance:
     - target: {fileID: 7557847559735511292, guid: cb29571c7d8477d47969dc1d960cb0e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557847559735511295, guid: cb29571c7d8477d47969dc1d960cb0e1, type: 3}
+      propertyPath: areaTranstitionName
+      value: Countryside-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb29571c7d8477d47969dc1d960cb0e1, type: 3}

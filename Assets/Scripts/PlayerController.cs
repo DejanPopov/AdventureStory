@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     //Static means there can only be one version of this for rvry single object.
     public static PlayerController instance;
 
+    //For player when goes into other area that he doesnt spawn in
+    //the middle of map rather then the point where he transitioned
+    public string areaTransitionName;
+
     // Start is called before the first frame update.
     void Start()
     {

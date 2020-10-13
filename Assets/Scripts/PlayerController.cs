@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         //Playing game for first time,setting instance.
         //When player goes from scene 1 to 2 and back to 1, there is 2 players.
         //This IF/ELSE is to stop that.
-        if (instance = null)
+        if (instance == null)
         {
             //instance = this script!
             instance = this;
@@ -40,8 +40,6 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
         
-
-
         //When we load a new scene, don't destroy whatever is brackets.
         //When player exits scene and goes into other scene he doesn't exit.
         //gameObject in this case is the player,because this script is attached on him..

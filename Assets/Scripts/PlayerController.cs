@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     //the middle of map rather then the point where he transitioned
     public string areaTransitionName;
 
+    //Having player in boundries;
+    private Vector3 botomLeftLimit;
+    private Vector3 topRightLimit;
+
     // Start is called before the first frame update.
     void Start()
     {
@@ -71,5 +75,17 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
             animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
+
+        //Same sa in CameraController for clamping 2 points
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, botomLeftLimit.x,
+            topRightLimit.x), Mathf.Clamp(transform.position.y, botomLeftLimit.y,
+            topRightLimit.y), transform.position.z);
+    }
+
+    public void SetBounds(Vector3 botLeft, Vector3 topRight)
+    {
+        botomLeftLimit = botLeft;
+        topRightLimit = topRight;
+        
     }
 } 

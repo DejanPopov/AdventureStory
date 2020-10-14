@@ -35,6 +35,8 @@ public class CameraController : MonoBehaviour
         botomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
 
+        //Bounds of the maps are here as values
+        PlayerController.instance.SetBounds(theMap.localBounds.min, theMap.localBounds.max);
     }
 
     // Update is called once per frame

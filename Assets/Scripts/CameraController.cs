@@ -15,15 +15,25 @@ public class CameraController : MonoBehaviour
     private Vector3 botomLeftLimit;
     private Vector3 topRightLimit;
 
+    //This is to eliminate the camera from showing as other than map
+    private float halfHeight;
+    private float halfWidth;
+
     // Start is called before the first frame update
     void Start()
     {
         //Finding target (player)
         target = PlayerController.instance.transform;
 
+        //Height of the camera.
+        halfHeight = Camera.main.orthographicSize;
+        //Aspect ration camera
+        halfWidth = halfHeight * Camera.main.aspect;
+        
         //Asign map,add in Unity under camera --> Tilemap --> Ground layer
-        botomLeftLimit = theMap.localBounds.min;
-        topRightLimit = theMap.localBounds.max;
+        // -halfWidth and -halfHeight so camera doesnt go out of boundries
+        botomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
+        topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
 
     }
 

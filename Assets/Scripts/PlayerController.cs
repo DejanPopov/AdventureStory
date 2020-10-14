@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -40,8 +41,12 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //Destroy other player spawn
-            Destroy(gameObject);
+            if (instance != this)
+            {
+                //Destroy other player spawn
+                Destroy(gameObject);
+            }
+           
         }
         
         //When we load a new scene, don't destroy whatever is brackets.

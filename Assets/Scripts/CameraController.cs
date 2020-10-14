@@ -23,7 +23,10 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         //Finding target (player)
-        target = PlayerController.instance.transform;
+        //target = PlayerController.instance.transform;
+
+        //Search all objects in the scene
+        target = FindObjectOfType<PlayerController>().transform;
 
         //Height of the camera.
         halfHeight = Camera.main.orthographicSize;

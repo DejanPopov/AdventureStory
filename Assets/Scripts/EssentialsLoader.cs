@@ -17,7 +17,8 @@ public class EssentialsLoader : MonoBehaviour
 
         if (PlayerController.instance == null)
         {
-            Instantiate(player);
+            PlayerController clone = Instantiate(player).GetComponent<PlayerController>();
+            PlayerController.instance = clone;
         }
     }
 

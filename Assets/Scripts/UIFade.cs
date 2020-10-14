@@ -44,7 +44,7 @@ public class UIFade : MonoBehaviour
                 fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 0f,
                 fadeSpeed * Time.deltaTime));
 
-            if (fadeScreen.color.a == 1f)
+            if (fadeScreen.color.a == 0f)
             {
                 shouldFadeFromBlack = false;
             }

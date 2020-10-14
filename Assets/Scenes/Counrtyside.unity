@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5009607861256642316, guid: e4429c96fb19f2348a0cbd7cc3a3e301, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 992851071}
+    - target: {fileID: 5009607861256642316, guid: e4429c96fb19f2348a0cbd7cc3a3e301, type: 3}
+      propertyPath: theMap
+      value: 
+      objectReference: {fileID: 992851071}
     - target: {fileID: 5009607861256642317, guid: e4429c96fb19f2348a0cbd7cc3a3e301, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.28

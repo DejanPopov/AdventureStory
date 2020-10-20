@@ -15,6 +15,7 @@ public class DialogManager : MonoBehaviour
     public string[] dialogLines;
 
     public int currentLine;
+    private bool justStarted;
 
     //Making this script instance of itself for using in script DialogActivator
     public static DialogManager instance;
@@ -39,17 +40,23 @@ public class DialogManager : MonoBehaviour
             //so it doesn't skip text ( if we used GetButton )
             if (Input.GetButtonUp("Fire1"))
             {
-                currentLine++;
-
-                //How many string are in array (dialogLines.Length)
-                if (currentLine >= dialogLines.Length)
+                if (!justStarted)
                 {
-                    dialogBox.SetActive(false);
+                    currentLine++;
+                    //How many string are in array (dialogLines.Length)
+                    if (currentLine >= dialogLines.Length)
+                    {
+                        dialogBox.SetActive(false);
+                    }
+                    else
+                    {
+                        //Update the text beeing shown
+                        dialogText.text = dialogLines[currentLine];
+                    }
                 }
                 else
                 {
-                    //Update the text beeing shown
-                    dialogText.text = dialogLines[currentLine];
+                    justStarted = false;
                 }
             }
         }
@@ -64,5 +71,7 @@ public class DialogManager : MonoBehaviour
 
         dialogText.text = dialogLines[0];
         dialogBox.SetActive(true);
+
+        justStarted = true;
     }
 }

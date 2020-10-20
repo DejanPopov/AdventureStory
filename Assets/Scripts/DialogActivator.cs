@@ -18,7 +18,7 @@ public class DialogActivator : MonoBehaviour
     void Update()
     {
         if (canActivate && Input.GetButtonDown("Fire1") 
-            && DialogManager.instance.dialogBox.activeInHierarchy)
+            && !DialogManager.instance.dialogBox.activeInHierarchy)
         {
             DialogManager.instance.ShowDialog(lines);
         }

@@ -19,7 +19,7 @@ public class DialogActivator : MonoBehaviour
     {
         if (canActivate && Input.GetButtonDown("Fire1"))
         {
-
+            DialogManager.instance.ShowDialog(lines);
         }
     }
 

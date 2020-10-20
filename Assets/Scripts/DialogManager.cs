@@ -17,7 +17,7 @@ public class DialogManager : MonoBehaviour
     public int currentLine;
 
     //Making this script instance of itself for using in script DialogActivator
-    public DialogManager instance;
+    public static DialogManager instance;
 
 
     // Start is called before the first frame update

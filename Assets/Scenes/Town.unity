@@ -10416,7 +10416,11 @@ MonoBehaviour:
   nameText: {fileID: 1596106770}
   dialogBox: {fileID: 990946576}
   nameBox: {fileID: 1713764219}
-  dialogLines: 
+  dialogLines:
+  - lol
+  - olo
+  - lololo
+  currentLine: 1
 --- !u!1 &1596106768
 GameObject:
   m_ObjectHideFlags: 0

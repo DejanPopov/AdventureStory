@@ -26,6 +26,19 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Open if dialog box is opened
+        if (dialogBox.activeInHierarchy)
+        {
+            //If the left mouse click is pressed then we initiate dialog
+            //We use GetButtonUp so the text will begin when player relases button
+            //so it doesn't skip text ( if we used GetButton )
+            if (Input.GetButtonUp("Fire1"))
+            {
+                currentLine++;
+
+                //Update the text beeing shown
+                dialogText.text = dialogLines[currentLine];
+            }
+        }
     }
 }

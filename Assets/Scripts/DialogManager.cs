@@ -24,7 +24,8 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        dialogText.text = dialogLines[currentLine];
+        //Test purpose
+        //dialogText.text = dialogLines[currentLine];
     }
 
     // Update is called once per frame
@@ -52,5 +53,10 @@ public class DialogManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ShowDialog()
+    {
+
     }
 }

@@ -36,8 +36,16 @@ public class DialogManager : MonoBehaviour
             {
                 currentLine++;
 
-                //Update the text beeing shown
-                dialogText.text = dialogLines[currentLine];
+                //How many string are in array (dialogLines.Length)
+                if (currentLine >= dialogLines.Length)
+                {
+                    dialogBox.SetActive(false);
+                }
+                else
+                {
+                    //Update the text beeing shown
+                    dialogText.text = dialogLines[currentLine];
+                }
             }
         }
     }

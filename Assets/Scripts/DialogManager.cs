@@ -55,8 +55,14 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void ShowDialog()
+    public void ShowDialog(string[] newLines)
     {
+        //Set new lines
+        dialogLines = newLines;
 
+        currentLine = 0;
+
+        dialogText.text = dialogLines[0];
+        dialogBox.SetActive(true);
     }
 }
